@@ -10,18 +10,25 @@ html {
     scroll-behavior: smooth;
 }
 
-::-webkit-scrollbar {
-    width: 0rem;
+body {
+    overflow-x: hidden;
 }
 
-@media (max-width: 1000px) {
+@media (max-width: 1200px) {
     #pink-arrow,
     #yellow-arrow {
         display: none;
     }
+    .left-blob,
+    .right-blob {
+        opacity: 0.4;
+    }
 }
 @media (max-width: 585px) {
     nav {
+        ul {
+            margin-left: 0px !important;
+        }
         img {
             display: none;
         }
@@ -33,22 +40,19 @@ html {
         li {
             margin: 0;
             a {
-                font-size: 0.8rem;
                 padding: 0.5rem 0.8rem;
             }
 
         }
     }
-    .container {
-        h1 {
-            font-size: 3rem !important; 
+}
+@media (max-width: 344px) {
+    nav {
+        ul {
+            display: none;
         }
-        h2 {
-            font-size: 2.5rem !important; 
-        }
-        p {
-            font-size: 0.925rem !important;
-            line-height: 1.5rem !important;
+        img {
+            display: block;
         }
     }
 }
@@ -59,6 +63,7 @@ nav {
     flex-direction: row;
     justify-content: space-evenly;
     align-items: center;
+    overflow: hidden;
     width: min(90%, 57rem);
     min-height: 48px;
     background: white;
@@ -70,10 +75,10 @@ nav {
 
     img {
         height: 2rem;
-        margin-right: auto;
     }
 
     ul {
+        margin-left: auto;
         list-style: none;
         li {
             display: inline-block;
@@ -82,6 +87,7 @@ nav {
             font-weight: 700;
 
             a {
+                font-size: clamp(0.8rem, 3.5vw, 1rem);
                 padding: 0.5rem 1rem;
                 border-radius: 20px;
                 color: black;
@@ -107,10 +113,12 @@ section {
 .hidden {
     opacity: 0;
     filter: blur(5px);
+    transform: translateY(5%);
     transition: all ease 0.5s;
 }
 .show {
     opacity: 1;
+    transform: translateY(0);
     filter: blur(0);
 }
 @media(prefers-reduced-motion) {
@@ -125,15 +133,23 @@ section {
 
 .spacer {
     width: 100%;
+    z-index: -1;
     aspect-ratio: 900 / 200;
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
 }
+#howtoplay {
+    position: relative;
+    margin-top: 5vw;
+    padding-top: 10vw;
+}
 .blue-white {
     background-image: url('assets/blue-white.svg');
 }
 .white-blue {
+    position: absolute;
+    top: -19vw;
     background-image: url('assets/white-blue.svg');
 }
 
@@ -143,31 +159,32 @@ section {
     align-items: center;
     height: fit-content;
     width: min(90%, 57rem);
+    min-width: 18rem;
 
     h1 {
         font-family: "Luckiest Guy", cursive;
-        font-size: 4.5rem;
+        font-size: clamp(2.5rem, 10vw, 4.5rem);
         text-align: center;
         margin-bottom: 1.5rem;
     }
     h2 {
         font-family: "Luckiest Guy", cursive;
-        font-size: 3rem;
+        font-size: clamp(2rem, 8vw, 3rem);
         text-align: center;
         margin-bottom: 1.5rem;
         animation-delay: 200ms;
     }
     h3 {
         font-family: "Fredoka", sans-serif;
-        font-size: 1.7rem;
+        font-size: clamp(1.3rem, 5vw, 1.7rem);
         text-align: center;
         font-weight: 550;
     }
     p {
         font-family: "Montserrat", sans-serif;
-        font-size: 1.2rem;
+        font-size: clamp(0.925rem, 2vw, 1.2rem);
         text-align: center;
-        line-height: 2rem;
+        line-height: 2;
     }
 }
 
@@ -179,7 +196,6 @@ section {
     position: absolute;
     animation: updown-pink 4s linear infinite;
 }
-
 #yellow-arrow {
     top: 100px;
     right: -150px;
@@ -197,7 +213,6 @@ section {
         transform: translateY(-20px) rotate(-10deg);
     }
 }
-
 @keyframes updown-yellow {
     0%, 100% {
         transform: translateY(0);
@@ -234,6 +249,21 @@ section {
 #playnow:active {
     transform: scale(0.95);
 }
+#about {
+    position: relative;
+    padding: 0;
+}
+.right-blob {
+    z-index: -1;
+    position: absolute;
+    right: -40rem;
+}
+.left-blob {
+    z-index: -1;
+    position: absolute;
+    left: -40rem;
+    bottom: 30rem;
+}
 
 #empowering {
     background-image: linear-gradient(90deg, #ff833e, #ff823ebe);
@@ -247,7 +277,7 @@ section {
     flex-direction: column;
     align-items: center;
     width: 100%;
-    padding: 2rem;
+    padding: 2rem max(1rem, 5%);
     margin: 1.5rem 0;
 
     background: #FFE43E;
@@ -269,8 +299,9 @@ section {
     box-shadow: 4px 5px;
 } 
 .tutorial {
+    max-width: 40rem;
     background: white;
-    padding: min(2rem, 10%);
+    padding: max(1rem, 5%);
     border: 2px solid black;
     border-radius: 10px;
     box-shadow: 1px 2px;
@@ -338,6 +369,7 @@ section {
 }
 
 .to-top {
+    opacity: 0;
     position: fixed;
     right: 2rem;
     bottom: -5rem;
@@ -357,6 +389,7 @@ section {
 }
 
 .to-top.active {
+    opacity: 0.9;
     bottom: 2rem;
     pointer-events: auto;
 }

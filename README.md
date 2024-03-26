@@ -13,4 +13,4 @@ This repository contains a landing page for a game which is driven by the main c
 The goal of this project is to create a fun and engaging game that can be used as a supplementary educational tool in learning the very basics (e.g. loops) of Computer Science in Singapore. Furthermore, this project was made to ultimately aid in Singapore's education issues related to _creative thinking._
 
 ## License
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE) file for details

@@ -112,7 +112,7 @@ section {
     align-items: center;
     width: 100%;
     height: fit-content;
-    padding: 2rem 0rem;
+    padding: 2rem 0rem 0rem 0;
     overflow-x: clip;
     overflow-y: visible;
 }
@@ -149,7 +149,7 @@ section {
 #howtoplay {
     position: relative;
     margin-top: 5vw;
-    padding-top: 10vw;
+    padding-block: min(10vw, 5rem);
 }
 .blue-white {
     background-image: url('assets/blue-white.svg');
@@ -319,6 +319,10 @@ section {
     }
 }
 
+#characters,
+#levels {
+    padding-bottom: min(5rem, 10vw);
+}
 #characters {
     .container {
         h2 {

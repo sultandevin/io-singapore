@@ -5,10 +5,6 @@ This repository contains a landing page for a game which is driven by the main c
 ### Desktop
 ![image](https://github.com/sultandevin/io-singapore/assets/108273639/27408cac-ab61-4c09-8d8e-cf8b2e9cfed0)
 
-### Tablet
-![Screen Shot 2024-03-27 at 21 56 05](https://github.com/sultandevin/io-singapore/assets/108273639/6ed9a5db-e47f-4862-9e16-1dc2ec7a6053)
-
-
 ### Mobile
 ![Screen Shot 2024-03-27 at 21 55 33](https://github.com/sultandevin/io-singapore/assets/108273639/fb84218f-6666-46a6-9354-368c5191cfe4)
 

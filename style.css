@@ -112,7 +112,7 @@ section {
     align-items: center;
     width: 100%;
     height: fit-content;
-    padding: 2rem 0rem 5rem 0;
+    padding: 2rem 0rem;
     overflow-x: clip;
     overflow-y: visible;
 }

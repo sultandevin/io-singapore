@@ -23,6 +23,11 @@ html, body {
     .right-blob {
         opacity: 0.4;
     }
+    nav {
+        ul li:nth-child(4) {
+            display: none;
+        }
+    }
 }
 @media (max-width: 585px) {
     nav {
@@ -231,7 +236,7 @@ section {
     width: fit-content;
     background: #FFE43E;
     margin-top: 2rem;
-    padding: 0.5rem 1rem;
+    padding: 0.35rem 1rem;
     border-radius: 1.5rem;
     border: 2px solid black;
     box-shadow: 1px 2px;
@@ -239,8 +244,8 @@ section {
     transition: all 0.5s ease;
     
     img {
-        height: 20px;
-        margin-right: 5px;
+        height: 1.4rem;
+        margin-right: 0.4rem;
     }
 }
 #playnow:hover {
@@ -359,12 +364,54 @@ section {
         .charcard:active {
             transform: translateY(3px);
         }
-        .snaps-inline {
-            scroll-snap-type: inline mandatory;
-            * {
-                scroll-snap-align: start;
-            }
-        }
+    }
+}
+
+#levels {
+    h2 {
+        text-align: center;
+    }
+    .levelwrapper {
+        width: 100%;
+        display: grid;
+        grid-auto-flow: column;
+        grid-auto-columns: max(12rem, 18%);
+        gap: 1.5rem;
+        padding-block: 2rem;
+
+        overflow-x: auto;
+        overscroll-behavior-inline: contain;
+    }
+    .levelcard {
+        display: flex;
+        flex-direction: column;
+        justify-content : flex-end;
+        position: relative;
+        height: 500px;
+        border: 2px solid black;
+        border-radius: 2rem;
+        box-shadow: 1px 2px;
+        background: linear-gradient(rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.4));
+        transition: all 0.5s linear;
+    }
+    .levelcard:hover {
+        transform: translateY(-10px);
+    }
+    .levelcard:active {
+        transform: translateY(3px);
+    }
+}
+#star {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    max-height: 2.5rem;
+}
+
+.snaps-inline {
+    scroll-snap-type: inline mandatory;
+    * {
+        scroll-snap-align: start;
     }
 }
 

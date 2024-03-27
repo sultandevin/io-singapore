@@ -108,7 +108,8 @@ section {
     width: 100%;
     min-height: 100vh;
     padding: 2rem 0rem 5rem 0;
-    overflow-x: hidden;
+    overflow-x: clip;
+    overflow-y: visible;
 }
 
 .hidden {
@@ -150,6 +151,7 @@ section {
 }
 .white-blue {
     position: absolute;
+    z-index: -1;
     top: -19vw;
     background-image: url('assets/white-blue.svg');
 }
@@ -164,13 +166,13 @@ section {
 
     h1 {
         font-family: "Luckiest Guy", cursive;
-        font-size: clamp(2.5rem, 10vw, 4.5rem);
+        font-size: clamp(2.5rem, 12vw, 4.5rem);
         text-align: center;
         margin-bottom: 1.5rem;
     }
     h2 {
         font-family: "Luckiest Guy", cursive;
-        font-size: clamp(2rem, 8vw, 3rem);
+        font-size: clamp(2.3rem, 8vw, 3rem);
         text-align: center;
         margin-bottom: 1.5rem;
         animation-delay: 200ms;
@@ -252,6 +254,7 @@ section {
 }
 #about {
     position: relative;
+    margin-top: 2rem;
     padding: 0;
 }
 .right-blob {
